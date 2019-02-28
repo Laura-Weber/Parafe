@@ -3,6 +3,9 @@
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="porteEntree ≔ fermee" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="porteSortie ≔ fermee" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="lecteurPasseport ≔ sleep" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="lecteurBiométrique ≔ sleep" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="personne ≔ PERSONNES" org.eventb.core.label="act5"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="porteEntree"/>
 <org.eventb.core.variable name=")" org.eventb.core.identifier="porteSortie"/>
@@ -13,4 +16,7 @@
 <org.eventb.core.seesContext name="." org.eventb.core.target="C0"/>
 <org.eventb.core.invariant name="/" org.eventb.core.label="inv1" org.eventb.core.predicate="porteEntree ∈ ETATPORTE"/>
 <org.eventb.core.invariant name="0" org.eventb.core.label="inv2" org.eventb.core.predicate="porteSortie ∈ ETATPORTE"/>
+<org.eventb.core.invariant name="1" org.eventb.core.label="inv3" org.eventb.core.predicate="lecteurPasseport ∈ ETATCAPTEUR"/>
+<org.eventb.core.invariant name="2" org.eventb.core.label="inv4" org.eventb.core.predicate="lecteurBiométrique ∈ ETATCAPTEUR"/>
+<org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="personne ∈ ℙ(PERSONNES)"/>
 </org.eventb.core.machineFile>

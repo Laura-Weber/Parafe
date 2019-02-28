@@ -7,9 +7,14 @@
 <org.eventb.core.carrierSet name="*" org.eventb.core.identifier="PASSEPORTS"/>
 <org.eventb.core.carrierSet name="+" org.eventb.core.identifier="VALIDE"/>
 <org.eventb.core.axiom name="," org.eventb.core.label="axm1" org.eventb.core.predicate="estValide ∈ ((PERSONNES × PASSEPORTS) → VALIDE)"/>
-<org.eventb.core.axiom name="-" org.eventb.core.label="axm2" org.eventb.core.predicate="∀v·(v ∈ VALIDE ∧ (v = accepte ∨ v = refuse))"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm2" org.eventb.core.predicate="VALIDE = {accepte, refuse}"/>
 <org.eventb.core.constant name="0" org.eventb.core.identifier="ouverte"/>
 <org.eventb.core.constant name="1" org.eventb.core.identifier="fermee"/>
 <org.eventb.core.carrierSet name="2" org.eventb.core.identifier="ETATPORTE"/>
 <org.eventb.core.axiom name="3" org.eventb.core.label="axm3" org.eventb.core.predicate="ETATPORTE = {ouverte, fermee}"/>
+<org.eventb.core.carrierSet name="4" org.eventb.core.identifier="ETATCAPTEUR"/>
+<org.eventb.core.constant name="5" org.eventb.core.identifier="ok"/>
+<org.eventb.core.constant name="6" org.eventb.core.identifier="ko"/>
+<org.eventb.core.constant name="7" org.eventb.core.identifier="sleep"/>
+<org.eventb.core.axiom name="8" org.eventb.core.label="axm4" org.eventb.core.predicate="ETATCAPTEUR = {ok, ko, sleep}"/>
 </org.eventb.core.contextFile>
