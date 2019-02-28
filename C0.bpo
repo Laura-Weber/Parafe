@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.poIdentifier name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.poIdentifier name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1"/>
 </org.eventb.core.poFile>
