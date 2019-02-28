@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
-<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="porteEntree ≔ fermee" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="porteSortie ≔ fermee" org.eventb.core.label="act2"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="lecteurPasseport ≔ sleep" org.eventb.core.label="act3"/>
@@ -11,7 +11,6 @@
 <org.eventb.core.variable name=")" org.eventb.core.identifier="porteSortie"/>
 <org.eventb.core.variable name="*" org.eventb.core.identifier="lecteurPasseport"/>
 <org.eventb.core.variable name="+" org.eventb.core.identifier="lecteurBiométrique"/>
-<org.eventb.core.variable name="," org.eventb.core.identifier="tapis"/>
 <org.eventb.core.variable name="-" org.eventb.core.identifier="personne"/>
 <org.eventb.core.seesContext name="." org.eventb.core.target="C0"/>
 <org.eventb.core.invariant name="/" org.eventb.core.label="inv1" org.eventb.core.predicate="porteEntree ∈ ETATPORTE"/>
@@ -19,4 +18,14 @@
 <org.eventb.core.invariant name="1" org.eventb.core.label="inv3" org.eventb.core.predicate="lecteurPasseport ∈ ETATCAPTEUR"/>
 <org.eventb.core.invariant name="2" org.eventb.core.label="inv4" org.eventb.core.predicate="lecteurBiométrique ∈ ETATCAPTEUR"/>
 <org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="personne ∈ ℙ(PERSONNES)"/>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ENTREE">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="personne ⊈ ∅"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="porteEntree = fermee"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="porteSortie = fermee"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd4" org.eventb.core.predicate="lecteurPasseport = sleep"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd5" org.eventb.core.predicate="lecteurPasseport = sleep"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd6" org.eventb.core.predicate="p ∈ personne"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SORTIE"/>
 </org.eventb.core.machineFile>
