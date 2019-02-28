@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="5">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="4">
+<org.eventb.core.poFile org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poIdentifier name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.poIdentifier name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.poIdentifier name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
 <org.eventb.core.poIdentifier name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
 <org.eventb.core.poIdentifier name="accepte" org.eventb.core.type="VALIDE"/>
 <org.eventb.core.poIdentifier name="estValide" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS×VALIDE)"/>
+<org.eventb.core.poIdentifier name="fermee" org.eventb.core.type="ETATPORTE"/>
+<org.eventb.core.poIdentifier name="ouverte" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.poIdentifier name="refuse" org.eventb.core.type="VALIDE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="7">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="estValide∈PERSONNES × PASSEPORTS → VALIDE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#,"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="∀v⦂VALIDE·v∈VALIDE∧(v=accepte∨v=refuse)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="ETATPORTE={ouverte,fermee}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#3"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

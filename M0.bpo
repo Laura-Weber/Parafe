@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="3">
-<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poFile org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poIdentifier name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.poIdentifier name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.poIdentifier name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
 <org.eventb.core.poIdentifier name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
 <org.eventb.core.poIdentifier name="accepte" org.eventb.core.type="VALIDE"/>
 <org.eventb.core.poIdentifier name="estValide" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS×VALIDE)"/>
+<org.eventb.core.poIdentifier name="fermee" org.eventb.core.type="ETATPORTE"/>
+<org.eventb.core.poIdentifier name="ouverte" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.poIdentifier name="refuse" org.eventb.core.type="VALIDE"/>
 <org.eventb.core.poPredicate name="PASSEPORTT" org.eventb.core.predicate="estValide∈PERSONNES × PASSEPORTS → VALIDE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#,"/>
 <org.eventb.core.poPredicate name="PASSEPORTU" org.eventb.core.predicate="∀v⦂VALIDE·v∈VALIDE∧(v=accepte∨v=refuse)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="PASSEPORTV" org.eventb.core.predicate="ETATPORTE={ouverte,fermee}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#3"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3"/>
-<org.eventb.core.poPredicateSet name="EVTALLHYPC1" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3"/>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3"/>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poIdentifier name="porteEntree" org.eventb.core.type="ETATPORTE"/>
+<org.eventb.core.poIdentifier name="porteSortie" org.eventb.core.type="ETATPORTE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTporteSortif" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="porteEntree'" org.eventb.core.type="ETATPORTE"/>
+<org.eventb.core.poIdentifier name="porteSortie'" org.eventb.core.type="ETATPORTE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPporteSortif" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTporteSortif" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="porteEntree∈ETATPORTE" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="porteSortie∈ETATPORTE" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#0"/>
+</org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

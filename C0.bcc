@@ -2,10 +2,14 @@
 <org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
 <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="estValide∈PERSONNES × PASSEPORTS → VALIDE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="∀v⦂VALIDE·v∈VALIDE∧(v=accepte∨v=refuse)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="ETATPORTE={ouverte,fermee}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#3" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="ETATPORTE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#2" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.scCarrierSet name="PASSEPORTS" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#*" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.scCarrierSet name="PERSONNES" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#)" org.eventb.core.type="ℙ(PERSONNES)"/>
 <org.eventb.core.scCarrierSet name="VALIDE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#+" org.eventb.core.type="ℙ(VALIDE)"/>
 <org.eventb.core.scConstant name="accepte" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#." org.eventb.core.type="VALIDE"/>
 <org.eventb.core.scConstant name="estValide" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#(" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS×VALIDE)"/>
+<org.eventb.core.scConstant name="fermee" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#1" org.eventb.core.type="ETATPORTE"/>
+<org.eventb.core.scConstant name="ouverte" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#0" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.scConstant name="refuse" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#\/" org.eventb.core.type="VALIDE"/>
 </org.eventb.core.scContextFile>
