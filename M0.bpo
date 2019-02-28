@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.poIdentifier name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.poIdentifier name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
+<org.eventb.core.poIdentifier name="accepte" org.eventb.core.type="VALIDE"/>
+<org.eventb.core.poIdentifier name="estValide" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS×VALIDE)"/>
+<org.eventb.core.poIdentifier name="refuse" org.eventb.core.type="VALIDE"/>
+<org.eventb.core.poPredicate name="PASSEPORTT" org.eventb.core.predicate="estValide∈PERSONNES × PASSEPORTS → VALIDE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="PASSEPORTU" org.eventb.core.predicate="∀v⦂VALIDE·v∈VALIDE∧(v=accepte∨v=refuse)" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPC1" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3"/>
+</org.eventb.core.poFile>
