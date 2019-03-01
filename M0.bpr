@@ -1,2 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<org.eventb.core.prFile version="1"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="SORTIE/grd1/THM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p5"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="capteurPresence∈ETATPRESENCE">
+<org.eventb.core.prIdent name="ETATPRESENCE" org.eventb.core.type="ℙ(ETATPRESENCE)"/>
+<org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteEntree∈ETATPORTE">
+<org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
+<org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteSortie∈ETATPORTE">
+<org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
+<org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
+<org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
+<org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR">
+<org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
+<org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+</org.eventb.core.prFile>
