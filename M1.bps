@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="PresenterPasseport/lecteurPasseport/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="63" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="PasseportVérifié/grd10/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="64" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="PasseportVérifié/grd4/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="PasseportVérifié/grd5/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="PasseportVérifié/porteEntree/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="68" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EntreeSas/grd2/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="69" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EntreeSas/grd4/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="69" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EntreeSas/grd5/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="69" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EntreeSas/capteurPresence/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="69" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EntreeSas/porteEntree/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="69" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="PrésenterBiométric/lecteurBiométrique/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="66" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="BiométricVérifié/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="63" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="BiométricVérifié/porteSortie/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="63" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SortieSas/capteurPresence/EQL" org.eventb.core.confidence="1000" org.eventb.core.poStamp="67" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Fin/lecteurBiométrique/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="63" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Fin/lecteurPasseport/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="63" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Fin/personne/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="63" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Fin/porteSortie/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="63" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

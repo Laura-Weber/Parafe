@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="C0"/>
+<org.eventb.core.axiom name="(" org.eventb.core.label="axm1" org.eventb.core.predicate="estValidePasseport ∈ ((PASSEPORTS) → VALIDE)&#10;"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm2" org.eventb.core.predicate="estValideBiométrique ∈ ((PERSONNES) → VALIDE)&#10;"/>
+<org.eventb.core.constant name=")" org.eventb.core.comment="estValidePasseport" org.eventb.core.identifier="estValidePasseport"/>
+<org.eventb.core.constant name="*" org.eventb.core.comment="estValideBiométrique" org.eventb.core.identifier="estValideBiométrique"/>
+</org.eventb.core.contextFile>

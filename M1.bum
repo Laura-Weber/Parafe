@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="(" org.eventb.core.assignment="porteEntree ≔ fermee" org.eventb.core.label="act1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="porteSortie ≔ fermee" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="lecteurPasseport ≔ sleep" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="lecteurBiométrique ≔ sleep" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="personne ≔ PERSONNES" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="capteurPresence ≔ nobody" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="passeportValide ≔ refuse " org.eventb.core.label="act7"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="biométriqueValide ≔ refuse " org.eventb.core.label="act8"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="passeport ≔ PASSEPORTS" org.eventb.core.label="act9"/>
+</org.eventb.core.event>
+<org.eventb.core.refinesMachine name=")" org.eventb.core.target="M0"/>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="porteEntree"/>
+<org.eventb.core.variable name="+" org.eventb.core.identifier="porteSortie"/>
+<org.eventb.core.variable name="," org.eventb.core.identifier="lecteurPasseport"/>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="lecteurBiométrique"/>
+<org.eventb.core.variable name="." org.eventb.core.identifier="personne"/>
+<org.eventb.core.variable name="/" org.eventb.core.identifier="capteurPresence"/>
+<org.eventb.core.invariant name="0" org.eventb.core.label="inv1" org.eventb.core.predicate="porteEntree ∈ ETATPORTE"/>
+<org.eventb.core.invariant name="1" org.eventb.core.label="inv2" org.eventb.core.predicate="porteSortie ∈ ETATPORTE"/>
+<org.eventb.core.invariant name="2" org.eventb.core.label="inv3" org.eventb.core.predicate="lecteurPasseport ∈ ETATCAPTEUR"/>
+<org.eventb.core.invariant name="3" org.eventb.core.label="inv4" org.eventb.core.predicate="lecteurBiométrique ∈ ETATCAPTEUR"/>
+<org.eventb.core.invariant name="4" org.eventb.core.label="inv5" org.eventb.core.predicate="personne ∈ ℙ(PERSONNES)"/>
+<org.eventb.core.invariant name="5" org.eventb.core.label="inv6" org.eventb.core.predicate="capteurPresence ∈ ETATPRESENCE"/>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="PresenterPasseport">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ENTREE"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="porteEntree = fermee"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="porteSortie = fermee"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="lecteurPasseport = sleep"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="lecteurBiométrique = sleep"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd5" org.eventb.core.predicate="capteurPresence = nobody"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="lecteurPasseport ≔ inUse" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="1" org.eventb.core.identifier="pass"/>
+<org.eventb.core.guard name="2" org.eventb.core.label="grd6" org.eventb.core.predicate="pass ∈ passeport"/>
+<org.eventb.core.guard name="3" org.eventb.core.label="grd7" org.eventb.core.predicate="personne ⊈ ∅"/>
+<org.eventb.core.guard name="4" org.eventb.core.label="grd8" org.eventb.core.predicate="p ∈ personne"/>
+<org.eventb.core.parameter name="5" org.eventb.core.identifier="p"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="7" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="PasseportVérifié">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ENTREE"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="porteEntree = fermee"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="porteSortie = fermee"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="lecteurPasseport = inUse"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="lecteurBiométrique = sleep"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="capteurPresence = nobody"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd9" org.eventb.core.predicate="pass ∈ passeport"/>
+<org.eventb.core.guard name="3" org.eventb.core.label="grd10" org.eventb.core.predicate="estValidePasseport(pass) = accepte"/>
+<org.eventb.core.parameter name="2" org.eventb.core.identifier="pass"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="porteEntree ≔ ouverte " org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="5" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="6" org.eventb.core.label="grd11" org.eventb.core.predicate="p ∈ personne"/>
+<org.eventb.core.guard name="7" org.eventb.core.label="grd12" org.eventb.core.predicate="personne ⊈ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="EntreeSas">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ENTREE"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="porteEntree = ouverte"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="porteSortie = fermee"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="capteurPresence = nobody"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="lecteurPasseport = inUse"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="lecteurBiométrique = sleep"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="capteurPresence ≔ someone" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="porteEntree ≔ fermee " org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name="3" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="4" org.eventb.core.label="grd7" org.eventb.core.predicate="p ∈ personne"/>
+<org.eventb.core.guard name="5" org.eventb.core.label="grd8" org.eventb.core.predicate="personne ⊈ ∅"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="PrésenterBiométric">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SORTIE"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="porteEntree = fermee"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="porteSortie = fermee"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="capteurPresence = someone"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="lecteurPasseport = inUse"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="lecteurBiométrique = sleep"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="lecteurBiométrique ≔ inUse" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="0" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd7" org.eventb.core.predicate="p ∈ personne"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="BiométricVérifié">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SORTIE"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="porteEntree = fermee"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="porteSortie = fermee"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="p ∈ personne"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="capteurPresence = someone"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="lecteurPasseport = inUse"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="lecteurBiométrique = inUse"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd7" org.eventb.core.predicate="estValideBiométrique(p) = accepte"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="porteSortie ≔ ouverte " org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SortieSas">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SORTIE"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="porteEntree = fermee"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="porteSortie = ouverte"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="capteurPresence = someone"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="lecteurPasseport = inUse"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="lecteurBiométrique = inUse"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="capteurPresence ≔ nobody" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="0" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd7" org.eventb.core.predicate="p ∈ personne"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="D" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Fin">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SORTIE"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="porteEntree = fermee"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="porteSortie = ouverte"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="capteurPresence = nobody"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="lecteurPasseport = inUse"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="lecteurBiométrique = inUse"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="porteSortie ≔ fermee" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="lecteurPasseport ≔ sleep" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="lecteurBiométrique ≔ sleep" org.eventb.core.label="act3"/>
+<org.eventb.core.guard name="1" org.eventb.core.label="grd6" org.eventb.core.predicate="p ∈ personne"/>
+<org.eventb.core.action name="2" org.eventb.core.assignment="personne ≔ personne ∖ {p}" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="8" org.eventb.core.identifier="passeportValide"/>
+<org.eventb.core.variable name="9" org.eventb.core.identifier="biométriqueValide"/>
+<org.eventb.core.invariant name=":" org.eventb.core.label="inv7" org.eventb.core.predicate="passeportValide ∈ VALIDE "/>
+<org.eventb.core.invariant name=";" org.eventb.core.label="inv8" org.eventb.core.predicate="biométriqueValide ∈ VALIDE"/>
+<org.eventb.core.variable name="=" org.eventb.core.identifier="passeport"/>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv9" org.eventb.core.predicate="passeport ∈ ℙ(PASSEPORTS)"/>
+<org.eventb.core.seesContext name="?" org.eventb.core.target="C1"/>
+</org.eventb.core.machineFile>
