@@ -3,7 +3,7 @@
 <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="estValide∈PERSONNES × PASSEPORTS → VALIDE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="VALIDE={accepte,refuse}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="ETATPORTE={ouverte,fermee}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#3" org.eventb.core.theorem="false"/>
-<org.eventb.core.scAxiom name="*" org.eventb.core.label="axm4" org.eventb.core.predicate="ETATCAPTEUR={ok,ko,sleep}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="*" org.eventb.core.label="axm4" org.eventb.core.predicate="ETATCAPTEUR={ok,ko,sleep,inuse}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8" org.eventb.core.theorem="false"/>
 <org.eventb.core.scCarrierSet name="ETATCAPTEUR" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#4" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.scCarrierSet name="ETATPORTE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#2" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.scCarrierSet name="PASSEPORTS" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#*" org.eventb.core.type="ℙ(PASSEPORTS)"/>
@@ -12,6 +12,7 @@
 <org.eventb.core.scConstant name="accepte" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#." org.eventb.core.type="VALIDE"/>
 <org.eventb.core.scConstant name="estValide" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#(" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS×VALIDE)"/>
 <org.eventb.core.scConstant name="fermee" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#1" org.eventb.core.type="ETATPORTE"/>
+<org.eventb.core.scConstant name="inuse" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#9" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.scConstant name="ko" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#6" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.scConstant name="ok" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#5" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.scConstant name="ouverte" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#0" org.eventb.core.type="ETATPORTE"/>

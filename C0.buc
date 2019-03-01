@@ -16,5 +16,6 @@
 <org.eventb.core.constant name="5" org.eventb.core.identifier="ok"/>
 <org.eventb.core.constant name="6" org.eventb.core.identifier="ko"/>
 <org.eventb.core.constant name="7" org.eventb.core.identifier="sleep"/>
-<org.eventb.core.axiom name="8" org.eventb.core.label="axm4" org.eventb.core.predicate="ETATCAPTEUR = {ok, ko, sleep}"/>
+<org.eventb.core.axiom name="8" org.eventb.core.label="axm4" org.eventb.core.predicate="ETATCAPTEUR = {ok, ko, sleep, inuse}"/>
+<org.eventb.core.constant name="9" org.eventb.core.identifier="inuse"/>
 </org.eventb.core.contextFile>
