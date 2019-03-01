@@ -343,16 +343,19 @@
 <org.eventb.core.prIdent name="inUse" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.prIdent name="ok" org.eventb.core.type="ETATCAPTEUR"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="capteurPresence∈ETATPRESENCE">
 <org.eventb.core.prIdent name="ETATPRESENCE" org.eventb.core.type="ℙ(ETATPRESENCE)"/>
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="inUse=ok"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -369,10 +372,9 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="lecteurPasseport=ok"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="lecteurPasseport=inUse"/>
@@ -380,18 +382,13 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="EntreeSas/grd5/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATCAPTEUR">
 <org.eventb.core.lang name="L"/>
@@ -682,16 +679,19 @@
 <org.eventb.core.prIdent name="inUse" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.prIdent name="ok" org.eventb.core.type="ETATCAPTEUR"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="capteurPresence∈ETATPRESENCE">
 <org.eventb.core.prIdent name="ETATPRESENCE" org.eventb.core.type="ℙ(ETATPRESENCE)"/>
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="inUse=ok"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -708,10 +708,9 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="lecteurPasseport=ok"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="lecteurPasseport=inUse"/>
@@ -719,18 +718,13 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="PasseportVérifié/grd5/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATCAPTEUR">
 <org.eventb.core.lang name="L"/>
@@ -1347,12 +1341,15 @@
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 <org.eventb.core.prIdent name="nobody" org.eventb.core.type="ETATPRESENCE"/>
 <org.eventb.core.prIdent name="someone" org.eventb.core.type="ETATPRESENCE"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="capteurPresence∈ETATPRESENCE"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -1369,10 +1366,9 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="someone=capteurPresence"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="someone=nobody"/>
@@ -1380,11 +1376,6 @@
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="porteSortie∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
@@ -1395,8 +1386,8 @@
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="EntreeSas/porteEntree/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATPORTE">
 <org.eventb.core.lang name="L"/>
@@ -2275,6 +2266,10 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="sleep=inUse"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="lecteurPasseport=inUse"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="sleep=lecteurPasseport"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
@@ -2284,17 +2279,12 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="Fin/personne/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.lang name="L"/>
@@ -2327,6 +2317,10 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -2334,11 +2328,6 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteSortie∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
@@ -2387,16 +2376,19 @@
 <org.eventb.core.prIdent name="fermee" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.prIdent name="ouverte" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="capteurPresence∈ETATPRESENCE">
 <org.eventb.core.prIdent name="ETATPRESENCE" org.eventb.core.type="ℙ(ETATPRESENCE)"/>
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="fermee=ouverte"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="porteEntree∈ETATPORTE"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="passeportValide∈VALIDE">
 <org.eventb.core.prIdent name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
@@ -2411,19 +2403,13 @@
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteEntree=fermee"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteEntree=ouverte"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="porteSortie∈ETATPORTE">
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
@@ -2434,8 +2420,8 @@
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="PresenterPasseport/grd4/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATCAPTEUR">
 <org.eventb.core.lang name="L"/>
@@ -2463,14 +2449,17 @@
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.prIdent name="ok" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.prIdent name="sleep" org.eventb.core.type="ETATCAPTEUR"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="capteurPresence∈ETATPRESENCE">
 <org.eventb.core.prIdent name="ETATPRESENCE" org.eventb.core.type="ℙ(ETATPRESENCE)"/>
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
@@ -2488,10 +2477,9 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="sleep=ok"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="lecteurPasseport=ok"/>
@@ -2500,18 +2488,13 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="PresenterPasseport/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="ETATPORTE">
 <org.eventb.core.lang name="L"/>
@@ -2547,16 +2530,19 @@
 <org.eventb.core.prIdent name="fermee" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.prIdent name="ouverte" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="capteurPresence∈ETATPRESENCE">
 <org.eventb.core.prIdent name="ETATPRESENCE" org.eventb.core.type="ℙ(ETATPRESENCE)"/>
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="fermee=ouverte"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="porteEntree∈ETATPORTE"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="passeportValide∈VALIDE">
 <org.eventb.core.prIdent name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
@@ -2571,19 +2557,13 @@
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteEntree=fermee"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteEntree=ouverte"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="porteSortie∈ETATPORTE">
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
@@ -2594,8 +2574,8 @@
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="PasseportVérifié/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.lang name="L"/>
@@ -2617,10 +2597,9 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="passeportValide∈VALIDE">
 <org.eventb.core.prIdent name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
@@ -2638,10 +2617,13 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))">
 <org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
@@ -2650,11 +2632,6 @@
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="porteSortie∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
@@ -2722,6 +2699,10 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="sleep=ok"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="lecteurBiométrique=ok"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -2730,18 +2711,13 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="lecteurBiométrique=sleep"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="PrésenterBiométric/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATPORTE">
 <org.eventb.core.lang name="L"/>
@@ -2783,15 +2759,14 @@
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteSortie=ouverte"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="fermee=ouverte"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteSortie=fermee"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="porteSortie∈ETATPORTE"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
@@ -2800,8 +2775,8 @@
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BiométricVérifié/grd5/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATCAPTEUR">
 <org.eventb.core.lang name="L"/>
@@ -2843,6 +2818,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="lecteurBiométrique=inUse"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="inUse=ok"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="lecteurBiométrique=ok"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -2851,17 +2830,12 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="BiométricVérifié/act2/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="ETATCAPTEUR">
 <org.eventb.core.lang name="L"/>
@@ -2911,15 +2885,14 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteSortie=ouverte"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteSortie=fermee"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="ouverte=fermee"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="porteSortie∈ETATPORTE"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
@@ -2928,8 +2901,8 @@
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SortieSas/grd5/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATCAPTEUR">
 <org.eventb.core.lang name="L"/>
@@ -2971,6 +2944,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="lecteurBiométrique=inUse"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="inUse=ok"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="lecteurBiométrique=ok"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -2979,17 +2956,12 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="SortieSas/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="ETATPORTE">
 <org.eventb.core.lang name="L"/>
@@ -3047,15 +3019,14 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteSortie=ouverte"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteSortie=fermee"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="ouverte=fermee"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="porteSortie∈ETATPORTE"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
@@ -3064,8 +3035,8 @@
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="Fin/grd5/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATCAPTEUR">
 <org.eventb.core.lang name="L"/>
@@ -3107,6 +3078,10 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="lecteurBiométrique=inUse"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="inUse=ok"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="lecteurBiométrique=ok"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -3115,17 +3090,12 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="Fin/grd6/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="ETATPRESENCE">
 <org.eventb.core.lang name="L"/>
@@ -3161,6 +3131,10 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="capteurPresence=someone"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="capteurPresence=nobody"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
@@ -3171,11 +3145,6 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="nobody=someone"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
@@ -3185,8 +3154,8 @@
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="Fin/act1/SIM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
 <org.eventb.core.lang name="L"/>
@@ -3219,6 +3188,10 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -3226,11 +3199,6 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteSortie∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
@@ -3273,6 +3241,10 @@
 <org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="personne∈ℙ(PERSONNES)">
+<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -3280,11 +3252,6 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="porteSortie∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)">
-<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
-<org.eventb.core.prIdent name="PERSONNES" org.eventb.core.type="ℙ(PERSONNES)"/>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
@@ -3296,7 +3263,7 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="PrésenterBiométric/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PASSEPORTS,PERSONNES">
+<org.eventb.core.prProof name="PrésenterBiométric/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PERSONNES">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
@@ -3315,8 +3282,8 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="passeportValide∈VALIDE">
 <org.eventb.core.prIdent name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
 <org.eventb.core.prIdent name="passeportValide" org.eventb.core.type="VALIDE"/>
@@ -3330,9 +3297,11 @@
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="passeport∈ℙ(PASSEPORTS)">
+<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -3341,7 +3310,6 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
@@ -3353,7 +3321,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="BiométricVérifié/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PASSEPORTS,PERSONNES">
+<org.eventb.core.prProof name="BiométricVérifié/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PERSONNES">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
@@ -3372,8 +3340,8 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="passeportValide∈VALIDE">
 <org.eventb.core.prIdent name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
 <org.eventb.core.prIdent name="passeportValide" org.eventb.core.type="VALIDE"/>
@@ -3387,9 +3355,11 @@
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="passeport∈ℙ(PASSEPORTS)">
+<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -3398,7 +3368,6 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
@@ -3410,7 +3379,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="SortieSas/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PASSEPORTS,PERSONNES">
+<org.eventb.core.prProof name="SortieSas/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PERSONNES">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
@@ -3429,8 +3398,8 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="passeportValide∈VALIDE">
 <org.eventb.core.prIdent name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
 <org.eventb.core.prIdent name="passeportValide" org.eventb.core.type="VALIDE"/>
@@ -3444,9 +3413,11 @@
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="passeport∈ℙ(PASSEPORTS)">
+<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -3455,7 +3426,6 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
@@ -3467,7 +3437,7 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="Fin/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PASSEPORTS,PERSONNES">
+<org.eventb.core.prProof name="Fin/grd1/GRD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PERSONNES">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
@@ -3486,8 +3456,8 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))"/>
+<org.eventb.core.prIdent name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="passeportValide∈VALIDE">
 <org.eventb.core.prIdent name="VALIDE" org.eventb.core.type="ℙ(VALIDE)"/>
 <org.eventb.core.prIdent name="passeportValide" org.eventb.core.type="VALIDE"/>
@@ -3501,9 +3471,11 @@
 <org.eventb.core.prIdent name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="passeport∈ℙ(PASSEPORTS)">
+<org.eventb.core.prIdent name="PASSEPORTS" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 <org.eventb.core.prIdent name="passeport" org.eventb.core.type="ℙ(PASSEPORTS)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬personne⊆(∅ ⦂ ℙ(PERSONNES))"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES)"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="porteEntree∈ETATPORTE">
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteEntree" org.eventb.core.type="ETATPORTE"/>
@@ -3512,7 +3484,6 @@
 <org.eventb.core.prIdent name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.prIdent name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR">
 <org.eventb.core.prIdent name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.prIdent name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
