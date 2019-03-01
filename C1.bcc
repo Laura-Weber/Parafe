@@ -3,7 +3,7 @@
 <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/Parafe/C0.bcc|org.eventb.core.scContextFile#C0" org.eventb.core.source="/Parafe/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.extendsContext#'"/>
 <org.eventb.core.scInternalContext name="C0">
 <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="estValide∈PERSONNES × PASSEPORTS → VALIDE" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
-<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="VALIDE={accepte,refuse}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#-" org.eventb.core.theorem="true"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="VALIDE={accepte,refuse}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="ETATPORTE={ouverte,fermee}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#3" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name="*" org.eventb.core.label="axm4" org.eventb.core.predicate="ETATCAPTEUR={ok,ko,sleep,inUse}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8" org.eventb.core.theorem="false"/>
 <org.eventb.core.scAxiom name="+" org.eventb.core.label="axm5" org.eventb.core.predicate="ETATPRESENCE={someone,nobody}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#&gt;" org.eventb.core.theorem="false"/>

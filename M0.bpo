@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="21">
-<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="19">
+<org.eventb.core.poFile org.eventb.core.poStamp="37">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="32">
 <org.eventb.core.poIdentifier name="ETATCAPTEUR" org.eventb.core.type="ℙ(ETATCAPTEUR)"/>
 <org.eventb.core.poIdentifier name="ETATPORTE" org.eventb.core.type="ℙ(ETATPORTE)"/>
 <org.eventb.core.poIdentifier name="ETATPRESENCE" org.eventb.core.type="ℙ(ETATPRESENCE)"/>
@@ -24,54 +24,57 @@
 <org.eventb.core.poPredicate name="ETATPRESENCI" org.eventb.core.predicate="ETATCAPTEUR={ok,ko,sleep,inUse}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#8"/>
 <org.eventb.core.poPredicate name="ETATPRESENCJ" org.eventb.core.predicate="ETATPRESENCE={someone,nobody}" org.eventb.core.source="/Parafe/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#&gt;"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="20">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="32">
 <org.eventb.core.poIdentifier name="capteurPresence" org.eventb.core.type="ETATPRESENCE"/>
 <org.eventb.core.poIdentifier name="lecteurBiométrique" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.poIdentifier name="lecteurPasseport" org.eventb.core.type="ETATCAPTEUR"/>
-<org.eventb.core.poIdentifier name="personne" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.poIdentifier name="personne" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 <org.eventb.core.poIdentifier name="porteEntree" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.poIdentifier name="porteSortie" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTlecteurPasseporu" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="20">
-<org.eventb.core.poIdentifier name="personne'" org.eventb.core.type="ℙ(PERSONNES)"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTlecteurPasseporu" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="32">
+<org.eventb.core.poIdentifier name="personne'" org.eventb.core.type="ℙ(PERSONNES×PASSEPORTS)"/>
 <org.eventb.core.poIdentifier name="capteurPresence'" org.eventb.core.type="ETATPRESENCE"/>
 <org.eventb.core.poIdentifier name="lecteurBiométrique'" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.poIdentifier name="porteEntree'" org.eventb.core.type="ETATPORTE"/>
 <org.eventb.core.poIdentifier name="lecteurPasseport'" org.eventb.core.type="ETATCAPTEUR"/>
 <org.eventb.core.poIdentifier name="porteSortie'" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPlecteurPasseporu" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTlecteurPasseporu" org.eventb.core.poStamp="20"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTlecteurPasseporv" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="20">
-<org.eventb.core.poIdentifier name="p" org.eventb.core.type="PERSONNES"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPlecteurPasseporu" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTlecteurPasseporu" org.eventb.core.poStamp="32"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTlecteurPasseporv" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="33">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="PERSONNES×PASSEPORTS"/>
+<org.eventb.core.poIdentifier name="porteEntree'" org.eventb.core.type="ETATPORTE"/>
+<org.eventb.core.poIdentifier name="lecteurPasseport'" org.eventb.core.type="ETATCAPTEUR"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPlecteurPasseporv" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTlecteurPasseporv" org.eventb.core.poStamp="20">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES))" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#'"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="porteEntree=fermee" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPlecteurPasseporv" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTlecteurPasseporv" org.eventb.core.poStamp="37">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="porteEntree=ouverte" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="porteSortie=fermee" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="lecteurPasseport=sleep" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#+"/>
-<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="lecteurPasseport=sleep" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="lecteurPasseport=ok" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="lecteurBiométrique=sleep" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#,"/>
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="p∈personne" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="capteurPresence=nobody" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#5|org.eventb.core.guard#."/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="SORTIE/grd1/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="21">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTlecteurPasseporw"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="p∈personne" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#*"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#*"/>
-<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTlecteurPasseporw"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTlecteurPasseporw" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="20">
-<org.eventb.core.poIdentifier name="p" org.eventb.core.type="PERSONNES"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTlecteurPasseporw" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="35">
+<org.eventb.core.poIdentifier name="lecteurBiométrique'" org.eventb.core.type="ETATCAPTEUR"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="PERSONNES×PASSEPORTS"/>
+<org.eventb.core.poIdentifier name="porteSortie'" org.eventb.core.type="ETATPORTE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPlecteurPasseporw" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTlecteurPasseporw" org.eventb.core.poStamp="20">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈personne" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicateSet name="EVTALLHYPlecteurPasseporw" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#EVTIDENTlecteurPasseporw" org.eventb.core.poStamp="36">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="personne⊈(∅ ⦂ ℙ(PERSONNES×PASSEPORTS))" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="porteEntree=fermee" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#+"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="⊤" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="porteSortie=fermee" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="lecteurPasseport=inUse" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="lecteurBiométrique=ok" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="capteurPresence=someone" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#\/"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="p∈personne" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#6|org.eventb.core.guard#0"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="20">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Parafe/M0.bpo|org.eventb.core.poFile#M0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="32">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="porteEntree∈ETATPORTE" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#\/"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="porteSortie∈ETATPORTE" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#0"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="lecteurPasseport∈ETATCAPTEUR" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#1"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="lecteurBiométrique∈ETATCAPTEUR" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#2"/>
-<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="personne∈ℙ(PERSONNES)" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#3"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="personne∈ℙ(PERSONNES × PASSEPORTS)" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#3"/>
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="capteurPresence∈ETATPRESENCE" org.eventb.core.source="/Parafe/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#8"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
